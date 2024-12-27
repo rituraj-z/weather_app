@@ -1,16 +1,14 @@
-# weather
+# Weather App ☁️
 
-A new Flutter project.
+An app made to facilitate users to see weather of their area.
 
-## Getting Started
+## Technologies Used 🧑‍💻
 
-This project is a starting point for a Flutter application.
+This app is made using Flutter supporting multiple platforms like Android, IOS, Mac OS, Windows, Linux.
+Weather data is fetched using OpenWeather API.
 
-A few resources to get you started if this is your first Flutter project:
+## Upcoming Features :
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Fetching Location of the user automatically.
+Animated UI on each weather condition.
+Widget Support.
