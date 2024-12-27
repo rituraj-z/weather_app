@@ -1,6 +1,6 @@
 # Weather App ☁️
 
-An app made to facilitate users to see weather of their area.
+With this app users can see the Temperature, Weather Condition, Weather Forcast, Humidity, Wind Speed & Pressure of their area.
 
 ## Technologies Used 🧑‍💻
 
