@@ -85,7 +85,6 @@ class _WeatherScreenState extends State<WeatherScreen> {
           final data = snapshot.data!;
 
           final currentWeatherData = data['list'][0];
-
           final currentTemp = currentWeatherData['main']['temp'];
           final currentSky = currentWeatherData['weather'][0]['main'];
           final currentPressure = currentWeatherData['main']['pressure'];
@@ -118,6 +117,24 @@ class _WeatherScreenState extends State<WeatherScreen> {
                             padding: const EdgeInsets.all(16.0),
                             child: Column(
                               children: [
+                                Align(
+                                  alignment: Alignment.centerLeft,
+                                  child: Row(
+                                    children: [
+                                      const Icon(Icons.location_pin),
+                                      const SizedBox(
+                                        width: 5,
+                                      ),
+                                      Text(
+                                        data['city']['name'],
+                                        style: const TextStyle(
+                                          fontSize: 18,
+                                          fontWeight: FontWeight.bold,
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                ),
                                 Text(
                                   '${(currentTemp - 273.15).round()} °C',
                                   style: const TextStyle(
@@ -224,7 +241,7 @@ class _WeatherScreenState extends State<WeatherScreen> {
                 content: TextField(
                   controller: _locationController,
                   decoration: const InputDecoration(
-                    hintText: 'City Name',
+                    hintText: 'Enter a new city name.',
                   ),
                 ),
                 actions: [
@@ -237,10 +254,13 @@ class _WeatherScreenState extends State<WeatherScreen> {
                   ElevatedButton(
                     onPressed: () {
                       if (_locationController.text.isNotEmpty) {
-                        setState(() {
-                          weather = getCurrentWeather(
-                              cityName: _locationController.text);
-                        });
+                        setState(
+                          () {
+                            weather = getCurrentWeather(
+                                cityName: _locationController.text);
+                            _locationController.clear();
+                          },
+                        );
                         Navigator.of(context).pop();
                       }
                     },
